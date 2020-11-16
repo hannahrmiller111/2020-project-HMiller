@@ -47,7 +47,7 @@ f_aq
 ```
 
 
-Solution: 60% of carbon eaten by birds is coming from the lake versus the land
+Solution: 44% of carbon eaten by birds is coming from the lake versus the land
 
 #Q2. What trophic level are fish versus puma? 
 
@@ -75,7 +75,7 @@ puma_troph
 
 ```{r}
 MeHg <- 4.5 
-MeHg_fish <- MeHg * fish_troph
+MeHg_fish <- MeHg * 3^fish_troph
 MeHg_fish
 ```
 
@@ -83,13 +83,15 @@ MeHg_fish
 ## Q3B. How much MeHg is in the puma? 
 
 ```{r}
-MeHg_puma <- (MeHg*f_aq) * (puma_troph)
+MeHg_puma <- (MeHg*3*f_aq) * 3^(puma_troph - 1)
 MeHg_puma
 ```
 
 # Q4.
 
 ## Puma or fish? 
+
+Fish MeHg = 126 ng/g and puma MeHg = 186 ng/g so you'd want to eat fish. Probably good since you might have other health consequences if you tried to kill a puma with your bare hands. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

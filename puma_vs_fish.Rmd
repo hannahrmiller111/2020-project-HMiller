@@ -41,12 +41,13 @@ $$
 f_{aq} = \text{ equation here}\\
 $$
 ```{r}
-f_aq <- ((-22) - (-29))/((-13)-(-29))
+f_aq <- 
+  
 f_aq
 ```
 
 
-Solution: 60% of carbon eaten by birds is coming from the lake versus the land
+Solution: ____ % of carbon eaten by birds is coming from the lake versus the land
 
 #Q2. What trophic level are fish versus puma? 
 
@@ -55,26 +56,29 @@ $$
 \space\\
 \text{Puma Trophic Position} = 1 + \frac{(\delta^{15}N_{puma} - [\delta^{15}N_{aq} \cdot f_{aq}+\delta^{15}N_{terr}\cdot(1-f_{aq}) ])}{\epsilon_{trophic}}\\
 \space\\
-\epsilon_{trophic} = 3 
+\epsilon_{trophic} = + 3 
 $$
 
 ```{r}
 rock_etching_info # rerun to have easy access to values 
 
-fish_troph <- 1 + ((5.5 - (-0.6))/3)
+fish_troph <- 
+  
 fish_troph
   
-puma_troph <- 1 + ((7.2 - (-0.6*f_aq + (-3.5) * (1-f_aq)))/3) 
+puma_troph <- 
+  
 puma_troph
 ```
 
-#Q3. Let's assume the MeHg in the lake is measured at 4.5 ng/g and that it increases 3X at each trophic level. We know all the carbon consumed by fish comes from the lake, so that is easy to calculate. For the puma, let's assume no MeHg is coming from the terrestrial environment, so we can use the f_aq value calculated above to determine the amount of MeHg getting into the birds and then multiply 3X from that concentration to get up to the puma. 
+#Q3. Let's assume the MeHg in the organic matter in the lake is measured at 4.5 ng/g and that it increases 3X at each trophic level. We know all the carbon consumed by fish comes from the lake, so we can use 4.5 ng/g as the starting concentration. For the puma, though, we know the second trophic level (birds) only takes up a portion (f_aq) of the MeHg so we must factor that in to determine MeHg mobilization into puma. 
 
 ## Q3A. How much MeHg is in the fish?
 
 ```{r}
 MeHg <- 4.5 
-MeHg_fish <- MeHg * fish_troph
+MeHg_fish <- 
+  
 MeHg_fish
 ```
 
@@ -82,13 +86,15 @@ MeHg_fish
 ## Q3B. How much MeHg is in the puma? 
 
 ```{r}
-MeHg_puma <- (MeHg*f_aq) * (puma_troph)
+MeHg_puma <- 
+  
 MeHg_puma
 ```
 
 # Q4.
 
 ## Puma or fish? 
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
