@@ -15,7 +15,7 @@ It is November 17th, 2020. You are in the Indian Peaks and have just run out of 
 
 Fortunately for you, there was some information carved into a rock near your camping spot by a scientist having an existential crises about their only mark on the world being unread journal arcticles. This information is compiled into a table to ease the strain on your weary, hungered eyes. 
 
-# Rock data 
+# Rock info
 
 ```{r "load packages", include=FALSE}
 library(tidyverse)
@@ -31,6 +31,7 @@ rock_etching_info
 ```
 
 # Mapping out potential food chain 
+![Aquatic and terrestrial trophic levels](trophic_levels.png)
 
 #Q1. How much C are birds eating from land versus lake? Save aquatic fraction as f_aq.
 
@@ -38,7 +39,6 @@ $$
 \delta^{13}C_{bird} = f_{aq} \cdot \delta^{13}C_{aq} + (1-f_{aq})\cdot\delta^{13}C_{terr}\\
 \downarrow\\
 f_{aq} = \text{ equation here}\\
-f_{aq} = \frac{\delta^{13}C_{bird} - \delta^{13}C_{terr}}{\delta^{13}C_{aq} - \delta^{13}C_{terr}}
 $$
 ```{r}
 f_aq <- ((-22) - (-29))/((-13)-(-29))
@@ -94,22 +94,3 @@ MeHg_puma
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
