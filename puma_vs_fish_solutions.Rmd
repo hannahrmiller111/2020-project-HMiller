@@ -1,15 +1,15 @@
 ---
 title: "Puma versus fish"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: '2'
   html_document:
     code_folding: show
     df_print: paged
     toc: yes
     toc_depth: 2
     toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
 editor_options:
   chunk_output_type: inline
 ---
@@ -73,7 +73,7 @@ rock_etching_info # rerun to have easy access to values
 fish_troph <- 1 + ((5.5 - (-0.6))/3)
 fish_troph
   
-puma_troph <- 1 + ((7.2 - (-0.6*f_aq_puma + (-3.5) * (1-f_aq)))/3) 
+puma_troph <- 1 + ((7.2 - (-0.6*f_aq_puma + (-3.5) * (1-f_aq_puma)))/3) 
 puma_troph
 ```
 
