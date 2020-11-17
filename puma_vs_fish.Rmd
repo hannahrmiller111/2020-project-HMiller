@@ -35,21 +35,25 @@ rock_etching_info
 ![Aquatic and terrestrial trophic levels](trophic_levels.png)
 
 
-#Q1. How much C in puma come from aquatic sources? Save aquatic fraction as f_aq.
+#Q1. How much C in puma and fish came from aquatic sources? Save aquatic fractions as f_aq_puma and f_aq_fish.
 
 $$
-\delta^{13}C_{puma} = f_{aq} \cdot \delta^{13}C_{aq} + (1-f_{aq})\cdot\delta^{13}C_{terr}\\
+\delta^{13}C_{puma/fish} = f_{aq} \cdot \delta^{13}C_{aq} + (1-f_{aq})\cdot\delta^{13}C_{terr}\\
 \downarrow\\
 f_{aq} = \text{ equation here}\\
 $$
 ```{r}
-f_aq <- 
+f_aq_puma <- 
   
-f_aq
+f_aq_puma
+
+f_aq_fish <-
+  
+f_aq_fish
 ```
 
 
-Solution: ___ of carbon eaten by puma is originally sourced from the lake versus the land
+Solution: ___ of carbon eaten by puma and ____ of carbon eaten by fish is originally sourced from an aquatic source
 
 #Q2. What trophic levels are fish and puma at? 
 

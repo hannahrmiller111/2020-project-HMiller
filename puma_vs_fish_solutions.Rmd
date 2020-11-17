@@ -26,9 +26,9 @@ library(tidyverse)
 
 ```{r}
 rock_etching_info <- tibble(
-  species = c("lake diatoms", "lake zooplankton", "lake fish", "terrestrial vegetation", "spiders", "birds", "coyote", "puma"),
-  d_13C = c(-13,-14,-15,-29,-28.5,-22,-23,-24),
-  d_15N = c(-0.6,3.2,5.5,-3.5,1.2,4.3,6.1,7.2)
+  species = c("lake diatoms", "lake zooplankton", "lake fish", "terrestrial vegetation", "spiders", "puma"),
+  d_13C = c(-13,-14,-15,-29,-28.5,-24),
+  d_15N = c(-0.6,3.2,5.5,-3.5,1.2,7.2)
 )
 rock_etching_info
 ```
@@ -38,7 +38,7 @@ rock_etching_info
 ![Aquatic and terrestrial trophic levels](trophic_levels.png)
 
 
-#Q1. How much C in puma come from aquatic sources? Save aquatic fraction as f_aq.
+#Q1. How much C in puma and fish came from aquatic sources? Save aquatic fractions as f_aq_puma and f_aq_fish.
 
 $$
 \delta^{13}C_{puma} = f_{aq} \cdot \delta^{13}C_{aq} + (1-f_{aq})\cdot\delta^{13}C_{terr}\\
@@ -47,12 +47,15 @@ f_{aq} = \text{ equation here}\\
 f_{aq} = \frac{\delta^{13}C_{puma} - \delta^{13}C_{terr}}{\delta^{13}C_{aq} - \delta^{13}C_{terr}}
 $$
 ```{r}
-f_aq <- ((-24) - (-28.5))/((-13)-(-28.5))
-f_aq
+f_aq_puma <- ((-24) - (-28.5))/((-13)-(-28.5))
+f_aq_puma
+
+f_aq_fish <- ((-15) - (-29))/((-13)-(-29))
+f_aq_fish
 ```
 
 
-Solution: 29% of carbon eaten by puma is originally sourced from the lake versus the land
+Solution: 29% of carbon eaten by puma and 88% of carbon eaten by fish is originally sourced from an aquatic source.
 
 #Q2. What trophic levels are fish and puma at? 
 
@@ -88,7 +91,7 @@ MeHg_fish
 ## Q3B. How much MeHg is in the puma? 
 
 ```{r}
-MeHg_puma <- MeHg * f_aq * 3^puma_troph
+MeHg_puma <- MeHg * f_aq_puma * 3^puma_troph
 MeHg_puma
 ```
 
