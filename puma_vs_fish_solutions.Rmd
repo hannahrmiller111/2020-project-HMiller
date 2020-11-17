@@ -1,12 +1,15 @@
 ---
 title: "Puma versus fish"
 output:
-  html_document: 
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+  html_document:
+    code_folding: show
     df_print: paged
     toc: yes
     toc_depth: 2
-    toc_float: true
-    code_folding: show
+    toc_float: yes
 editor_options:
   chunk_output_type: inline
 ---
@@ -24,7 +27,7 @@ library(tidyverse)
 ```{r}
 rock_etching_info <- tibble(
   species = c("lake diatoms", "lake zooplankton", "lake fish", "terrestrial vegetation", "spiders", "birds", "coyote", "puma"),
-  d_13C = c(-13,-14,-15,-29,-25,-22,-23,-24),
+  d_13C = c(-13,-14,-15,-29,-28.5,-22,-23,-24),
   d_15N = c(-0.6,3.2,5.5,-3.5,1.2,4.3,6.1,7.2)
 )
 rock_etching_info
@@ -44,12 +47,12 @@ f_{aq} = \text{ equation here}\\
 f_{aq} = \frac{\delta^{13}C_{puma} - \delta^{13}C_{terr}}{\delta^{13}C_{aq} - \delta^{13}C_{terr}}
 $$
 ```{r}
-f_aq <- ((-24) - (-29))/((-13)-(-29))
+f_aq <- ((-24) - (-28.5))/((-13)-(-28.5))
 f_aq
 ```
 
 
-Solution: 31% of carbon eaten by puma is originally sourced from the lake versus the land
+Solution: 29% of carbon eaten by puma is originally sourced from the lake versus the land
 
 #Q2. What trophic levels are fish and puma at? 
 
